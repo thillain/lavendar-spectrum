@@ -16,7 +16,7 @@
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
-@font-face {
+/* @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
 	font-weight: 400;
@@ -29,12 +29,58 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+} */
+ /* ia-writer-mono-latin-400-normal */
+@font-face {
+	font-family: "iA Writer Mono";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff2)
+			format("woff2"),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff)
+			format("woff");
+}
+
+/* ia-writer-mono-latin-700-normal */
+@font-face {
+	font-family: "iA Writer Mono";
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-700-normal.woff2)
+			format("woff2"),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-700-normal.woff)
+			format("woff");
+}
+
+/* ia-writer-mono-latin-400-italic */
+@font-face {
+	font-family: "iA Writer Mono";
+	font-style: italic;
+	font-display: swap;
+	font-weight: 400;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-italic.woff2)
+			format("woff2"),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-italic.woff)
+			format("woff");
+}
+
+/* ia-writer-mono-latin-700-italic */
+@font-face {
+	font-family: "iA Writer Mono";
+	font-style: italic;
+	font-display: swap;
+	font-weight: 700;
+	src: url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-700-italic.woff2)
+			format("woff2"),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-700-italic.woff)
+			format("woff");
 }
 body {
 	font-family: 'Atkinson', sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
+	margin: auto;
+	padding: 20px;
 	/* background: linear-gradient(var(--gray-gradient)) no-repeat; */
 	background-color: var(--cassidoo-white);
 	background-size: 100% 600px;
@@ -50,6 +96,12 @@ main {
 	margin: auto;
 	padding: 3em 1em;
 }
+html,
+body,
+button,
+code {
+	font-family: "iA Writer Mono", monospace;
+}
 h1,
 h2,
 h3,
@@ -61,19 +113,25 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 2em;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 1.5em;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 1.17em;
 }
 h4 {
 	font-size: 1.563em;
 }
 h5 {
 	font-size: 1.25em;
+}
+h1 {
+	font-weight: 400;
+}
+h2 {
+	font-weight: 400;
 }
 strong,
 b {

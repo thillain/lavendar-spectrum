@@ -1,8 +1,13 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import HomePosts from "../components/HomePosts.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
 ---
 
 <!doctype html>
@@ -13,11 +18,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
+			<p>Hi! I’m Thillai, and I like to make simple.</p>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+				I am a Lead Engineer by work. Outside of that fancy title, I
+				like to write, code, and make things. I enjoy hiking, gardening,
+				playing music and watching documentaries about travel and off
+				road.
 			</p>
+			<h3>Here's my most recent posts</h3>
+			<HomePosts allPosts={posts} />
 		</main>
 		<Footer />
 	</body>
