@@ -1,29 +1,33 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <header>
 	<div class="header-section">
 		<div class="header-frame">
-			<h1>Thillai Narayanan</h1>
-			<h2>
-				Software Engineer — mostly writing code, occasionally writing
-				blogs
-			</h2>
+			<h1>{title}</h1>
+			<h2>{description}</h2>
 		</div>
-		<!-- <div class="img-frame">
-			<img src="/img/front.jpg" alt="Cassidy's face" />
-		</div> -->
 	</div>
 </header>
+<nav>
+	<HeaderLink href="/">home</HeaderLink>
+	<HeaderLink href="/blog">blog</HeaderLink>
+</nav>
 <style>
 	header {
 		background: var(--cassidoo-white);
 		width: 720px;
 		max-width: calc(100% - 2rem);
 		margin: auto;
-		padding: 2rem 1rem;
+		padding: 1rem;
 	}
 	h2 {
 		margin: 1.5rem 0;
@@ -36,10 +40,17 @@ import { SITE_TITLE } from "../consts";
 	nav {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-start;
+		position: sticky;
+		top: 0;
+		text-align: center;
+		background: var(--transwhite);
+		-webkit-backdrop-filter: blur(1px);
+		backdrop-filter: blur(1px);
+		padding: 0rem 1rem;
 	}
 	nav a {
-		padding: 0.5em 0.5em;
+		padding: 0.5rem 0.5rem;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;

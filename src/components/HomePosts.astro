@@ -1,3 +1,32 @@
 ---
+import Post from "../components/Post.astro";
+import ColorScript from "../components/ColorScript.astro";
 
+const { allPosts } = Astro.props;
+
+//.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+let posts = allPosts
+	.sort(
+		(a, b) =>
+			new Date(b.data.pubDate).valueOf() -
+			new Date(a.data.pubDate).valueOf(),
+	)
+	.slice(0, 5);
 ---
+
+<content>
+	<ul class="posts-list">
+		{
+			posts.map(
+				({
+					url,
+					data: { description, slug, title, tags, pubDate },
+				}) => (
+					<Post {url} {description} {pubDate} {slug} {title} {tags} />
+				),
+			)
+		}
+	</ul>
+</content>
+<ColorScript />

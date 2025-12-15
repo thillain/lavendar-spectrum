@@ -1,8 +1,8 @@
 ---
-title: "My first post"
-slug: public-speaking
-description: ""
-pubDate: "Nov 22 2025"
+title: "Markdown Example2"
+slug: public-speaking3
+description: "Check out how markdown is rendered!3"
+pubDate: "Dec 03 2025"
 tags: [gratitude, personal]
 ---
 

@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Tags from "../components/Tags.astro";
 import ColorScript from "../components/ColorScript.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { SITE_DESCRIPTION_INDEX, SITE_TITLE } from "../consts";
 
 type Props = CollectionEntry<"posts">["data"];
 
@@ -32,27 +33,27 @@ if (updated) {
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: calc(100% - 2rem);
 				max-width: 100%;
 				margin: 0;
 			}
 			.prose {
 				width: 720px;
-				max-width: calc(100% - 2em);
+				max-width: calc(100% - 2rem);
 				margin: auto;
-				padding: 1em;
+				padding: 1rem;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
+				margin-bottom: 1rem;
+				padding: 1rem 0;
 				line-height: 1;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 0.5rem 0;
 			}
 			.date {
-				margin-bottom: 0.5em;
+				margin-bottom: 0.5rem;
 				color: rgb(var(--gray));
 			}
 			.last-updated-on {
@@ -62,7 +63,7 @@ if (updated) {
 	</head>
 
 	<body>
-		<Header />
+		<Header title={SITE_TITLE} description={SITE_DESCRIPTION_INDEX}/>
 		<main>
 			<article>
 				<div class="prose">

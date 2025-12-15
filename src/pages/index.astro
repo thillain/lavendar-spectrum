@@ -2,21 +2,24 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Tags from "../components/Tags.astro";
 import HomePosts from "../components/HomePosts.astro";
+
 import { getCollection } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION_INDEX } from "../consts";
+import getTags from "../scripts/getTags";
 
-const posts = await getCollection("blog");
-
+const posts = await getCollection("posts");
+const tags = getTags(posts);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION_INDEX} />
 	</head>
 	<body>
-		<Header />
+		<Header title={SITE_TITLE} description={SITE_DESCRIPTION_INDEX} />
 		<main>
 			<p>Hi! I’m Thillai, and I like to make simple.</p>
 			<p>
@@ -27,6 +30,7 @@ const posts = await getCollection("blog");
 			</p>
 			<h3>Here's my most recent posts</h3>
 			<HomePosts allPosts={posts} />
+			<Tags tags={tags} all />
 		</main>
 		<Footer />
 	</body>
