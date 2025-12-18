@@ -307,3 +307,13 @@ ul.tags-list {
 .header-frame {
 	max-width: clamp(350px, 400px, 500px);
 }
+
+.tag-title {
+	font-weight: 400;
+	color: var(--black);
+}
+
+h3,
+.center {
+	text-align: center;
+}
