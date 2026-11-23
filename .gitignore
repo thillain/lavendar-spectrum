@@ -5,6 +5,8 @@ dist/
 
 # dependencies
 node_modules/
+.pnp.*
+.yarn/install-state.gz
 
 # logs
 npm-debug.log*
@@ -22,3 +24,4 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.yarn/*
