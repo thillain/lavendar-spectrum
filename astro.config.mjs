@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://thillain.github.io',
   integrations: [mdx(), sitemap()],
 
   vite: {
@@ -15,5 +15,5 @@ export default defineConfig({
   },
   devToolbar: {
     enabled: false,
-  }
+  },
 });
