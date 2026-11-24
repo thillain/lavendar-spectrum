@@ -8,6 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thillain.github.io',
+  base: '/lavendar-spectrum',
   integrations: [mdx(), sitemap()],
 
   vite: {

@@ -1,6 +1,8 @@
 ---
 import ColorScript from "./ColorScript.astro";
 
+import { withBase } from "../consts";
+
 const { tags, all } = Astro.props;
 ---
 
@@ -10,7 +12,7 @@ const { tags, all } = Astro.props;
 		tags &&
 			tags.map((tag) => (
 				<>
-					<a class="tag" href={`/tag/${tag}`}>
+					<a class="tag" href={withBase(`tag/${tag}`)}>
 						#{tag}
 					</a>
 					{` `}
